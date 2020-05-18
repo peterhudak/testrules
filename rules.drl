@@ -1,0 +1,38 @@
+  package com.lilly.lrl.eventcoordinator.rules;
+global com.lilly.lrl.eventcoordinator.rules.model.DataProductBuildModel dataProductBuildModel;
+
+import com.lilly.lrl.eventcoordinator.rules.model.RuleInputModel;
+
+dialect  "mvel"
+
+rule "Data Product build"
+    when
+        ruleInputModel : RuleInputModel(id == "test")
+    then
+        dataProductBuildModel.setDagId("TEST-PRODUCT")
+        dataProductBuildModel.addParameter("param1", "value1")
+end
+
+rule "Data Product build"
+    when
+        ruleInputModel : RuleInputModel(id == "test1")
+    then
+        dataProductBuildModel.setDagId("TEST-PRODUCT1")
+        dataProductBuildModel.addParameter("param1", "value1")
+end
+
+rule "Data Product build"
+    when
+        ruleInputModel : RuleInputModel(id == "test2")
+    then
+        dataProductBuildModel.setDagId("TEST-PRODUCT1")
+        dataProductBuildModel.addParameter("param1", "value1")
+end
+
+rule "Data Product build"
+    when
+        ruleInputModel : RuleInputModel(id == "test3")
+    then
+        dataProductBuildModel.setDagId("TEST-PRODUCT3")
+        dataProductBuildModel.addParameter("param1", "value1")
+end
